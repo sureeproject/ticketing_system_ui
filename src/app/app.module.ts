@@ -18,18 +18,25 @@ import { RouterModule } from '@angular/router';
 
 
 import { StripePaymentComponent } from './components/stripe-payment/stripe-payment.component';
-import { LoginTicketSystemComponent } from './components/login-ticket-system/login-ticket-system.component';
+import { SellTicketComponent } from './components/ticket/sell-ticket/sell-ticket.component';
 
+import { SignUpComponent } from './components/login/sign-up/sign-up.component';
+import { SignInComponent } from './components/login/sign-in/sign-in.component';
 
 const appRoutes : Routes = [
-  {path: 'login', component: LoginTicketSystemComponent},
-  {path: 'logout', component: StripePaymentComponent}
+  {path: 'login', component: SignInComponent},
+  {path: 'logout', component:     SignUpComponent,
+}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginTicketSystemComponent
+    SellTicketComponent,
+    SignInComponent,
+    SignUpComponent,
+    StripePaymentComponent
+
   ],
   imports: [
     BrowserModule,
