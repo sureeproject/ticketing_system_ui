@@ -29,7 +29,10 @@ export class OrderComponent implements OnInit {
     if(ticket.status == TicketStatus.SOLDOUT){
       const userDetails = JSON.parse(JSON.stringify(window.sessionStorage.getItem("userdetails")));
       const userId = JSON.parse(userDetails).id;  
-      this.orderService.createOrder(userId,ticket.id)
+      this.orderService.createOrder(userId,ticket.id).subscribe(
+        responseData => {
+          console.log(responseData.body)
+        });
     }
   }
 
