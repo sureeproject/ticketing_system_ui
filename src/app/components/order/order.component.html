@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div class="site-section">
+  <div class="table-responsive-md">
+    <table class="table table-striped table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Order Number</th>
+          <th scope="col">Ticket Name</th>
+          <th scope="col">Ticket Price</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <th>{{order.id}}</th>
+          <td>{{order.ticket.name}}</td>
+          <td>{{order.ticket.price}}</td>
+          <td><app-stripe-payment [ticket]="order.ticket" 
+            (ticketSoldOut)="onTicketSoldOut($event)"></app-stripe-payment></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="row mb-5">
+      <div class="col">
+        <button class="btn-eazybank" routerLink="/sellticket">
+            BACK
+          </button>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <form (ngSubmit)="createTicket(ticketForm)" 
+      class="login100-form p-l-55 p-r-55 p-t-100 p-b-55" #ticketForm="ngForm">
+        <span class="login100-form-title">
+          Create Ticket
+        </span>
+        <div class="form-group">
+          <div class="wrap-input100 validate-input m-u-16 m-t-16" 
+          data-validate="Please enter title">
+            <input class="input100" type="text" name="title" 
+            id="title" placeholder="Ticket Title" required 
+            [(ngModel)]="ticket.name" #title="ngModel">
+            <span class="focus-input100"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter price">
+            <input class="input100" type="text" name="price"
+             placeholder="Price value" id="price" required
+            [(ngModel)]="ticket.price" #price="ngModel">
+            <span class="focus-input100"></span>
+          </div>
+        </div>    
+
+        <div class="container-submit-form-btn">
+          <button class="submit-form-btn" type="submit">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

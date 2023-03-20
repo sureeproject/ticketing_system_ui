@@ -1,0 +1,24 @@
+<div data-navigation="container" class="i-top-header">
+    <div class="wrapper top-section">
+      <div class="hleft">
+        <a class="logo selfLogo"
+         [routerLink]="user.authStatus!='AUTH' ? ['/home'] : ['/sellticket']">
+         <img alt="logo"src="../assets/images/logo.png"></a>
+      </div>
+      <div class="mnav_hb hide">
+        <div class="hamburger"><span class="line"></span><span class="line"></span><span class="line"></span></div>
+      </div>
+      <nav class="hright dnav">
+        <ul>
+          <li *ngIf="user.authStatus!='AUTH'" routerLinkActive="active"><a routerLink="/login">Sign In</a></li>
+          <li *ngIf="user.authStatus!='AUTH'" routerLinkActive="active"><a routerLink="/signup">Sign Up</a></li>
+          <li *ngIf="user.authStatus=='AUTH'" routerLinkActive="active"><a routerLink="/sellticket">Sell Tickets</a></li>
+          <li *ngIf="user.authStatus=='AUTH'" routerLinkActive="active"><a routerLink="/buyticket">Buy Tickets</a></li>
+          <li *ngIf="user.authStatus=='AUTH'" routerLinkActive="active"><a routerLink="/myOrders">My Orders</a></li>
+          <li *ngIf="user.authStatus=='AUTH'" routerLinkActive="active"><a routerLink="/logout">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  
