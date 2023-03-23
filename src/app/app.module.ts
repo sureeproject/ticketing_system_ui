@@ -13,6 +13,7 @@ import { SellticketsComponent } from './components/selltickets/selltickets.compo
 import { LogoutComponent } from './components/logout/logout.component';
 import { StripePaymentComponent } from './components/stripe-payment/stripe-payment.component';
 import { OrderComponent } from './components/order/order.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { OrderComponent } from './components/order/order.component';
     SellticketsComponent,
     LogoutComponent,
     StripePaymentComponent,
-    OrderComponent
+    OrderComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

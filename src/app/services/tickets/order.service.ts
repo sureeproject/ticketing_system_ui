@@ -20,7 +20,7 @@ export class OrderService {
     var url = environment.rooturl + AppConstants.ORDER_CREATE_URL.replace(/{userId}/g, userId.toString());
     url = url.replace(/{ticketId}/g, ticketId.toString());
     console.log(url);
-    return this.http.get(url,{ observe: 'response'});
+    return this.http.post(url,{ observe: 'response'});
   }
 
   getOrders(userId : number){

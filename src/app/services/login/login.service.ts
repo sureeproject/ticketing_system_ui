@@ -18,5 +18,7 @@ export class LoginService {
     window.sessionStorage.setItem("userdetails",JSON.stringify(user));
     return this.http.get(environment.rooturl + AppConstants.LOGIN_API_URL, { observe: 'response',withCredentials: true });
   }
-
+  signup(user: User) {
+    return this.http.post(environment.rooturl + AppConstants.SIGN_UP_API_URL,user, { observe: 'response',withCredentials: true });
+  }
 }

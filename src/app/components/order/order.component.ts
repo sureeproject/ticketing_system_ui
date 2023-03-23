@@ -4,6 +4,7 @@ import { TicketService } from 'src/app/services/tickets/ticketservice.service';
 import { User } from 'src/app/model/user.model';
 import { TicketStatus } from 'src/app/constants/ticket-status.enum';
 import { OrderService } from 'src/app/services/tickets/order.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',
@@ -15,7 +16,7 @@ export class OrderComponent implements OnInit {
   orders = new Array();
 
 
-  constructor(private ticketService: TicketService, private orderService: OrderService) { }
+  constructor(private ticketService: TicketService, private orderService: OrderService, private router: Router) { }
 
   ngOnInit(): void {
     const userDetails = JSON.parse(JSON.stringify(window.sessionStorage.getItem("userdetails")));
@@ -29,9 +30,10 @@ export class OrderComponent implements OnInit {
     if(ticket.status == TicketStatus.SOLDOUT){
       const userDetails = JSON.parse(JSON.stringify(window.sessionStorage.getItem("userdetails")));
       const userId = JSON.parse(userDetails).id;  
-      this.orderService.createOrder(userId,ticket.id).subscribe(
+      this.orderService.createOrder(userId,ticket.id)
+      .subscribe(
         responseData => {
-          console.log(responseData.body)
+          this.router.navigate(['myOrders']);
         });
     }
   }

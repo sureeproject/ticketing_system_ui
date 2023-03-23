@@ -15,7 +15,7 @@
           <th>{{order.id}}</th>
           <td>{{order.ticket.name}}</td>
           <td>{{order.ticket.price}}</td>
-          <td><app-stripe-payment [ticket]="order.ticket" 
+          <td><app-stripe-payment [ticket]="order.ticket" *ngIf="order.ticket.status =='LOCKED'"
             (ticketSoldOut)="onTicketSoldOut($event)"></app-stripe-payment></td>
         </tr>
       </tbody>
@@ -23,7 +23,7 @@
     </div>
     <div class="row mb-5">
       <div class="col">
-        <button class="btn-eazybank" routerLink="/sellticket">
+        <button  class="btn-eazybank" routerLink="/sellticket">
             BACK
           </button>
       </div>

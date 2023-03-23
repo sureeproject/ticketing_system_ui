@@ -33,8 +33,6 @@ export class StripePaymentComponent implements OnInit {
       locale: 'auto',
       token: (token: any) => {
         console.log(token);
-        alert('Token Created!!');   
-  
         // Use an arrow function to preserve the context of 'this'
         console.log(this.ticket.id);
         this.ticket.status = "SOLDOUT";

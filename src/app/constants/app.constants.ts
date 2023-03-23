@@ -2,6 +2,7 @@
 export const  AppConstants = {
     CONTACT_API_URL : "/contact",
     LOGIN_API_URL : "/users/signin",
+    SIGN_UP_API_URL : "/users/signup",
     TICKET_CREATE_URL : "/tickets/create",
     AVALIABLE_TICKETES : "/tickets",
     ORDER_CREATE_URL : "/orders/users/{userId}/tickets/{ticketId}",

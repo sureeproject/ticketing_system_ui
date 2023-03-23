@@ -15,7 +15,8 @@
           <th>{{ticket.id}}</th>
           <td>{{ticket.name}}</td>
           <td>{{ticket.price | currency}}</td>
-          <td><app-stripe-payment [ticket]="ticket" (ticketSoldOut)="onTicketSoldOut($event)"></app-stripe-payment></td>
+          <td><app-stripe-payment [ticket]="ticket" 
+            (ticketSoldOut)="onTicketSoldOut($event)"></app-stripe-payment></td>
           <!-- <td><button id="{{ticket.id}}" class="submit-form-btn" type="submit">Buy</button></td> -->
         </tr>
       </tbody>
