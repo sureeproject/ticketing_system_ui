@@ -9,7 +9,8 @@
         <div class="hamburger"><span class="line"></span><span class="line"></span><span class="line"></span></div>
       </div>
       <nav class="hright dnav">
-        <ul>
+        <ul>     
+          <li *ngIf="user.authStatus=='AUTH'" routerLinkActive="active"> <a style="color:#57b846">Hi ! {{user.firstName}}</a></li>
           <li *ngIf="user.authStatus!='AUTH'" routerLinkActive="active"><a routerLink="/login">Sign In</a></li>
           <li *ngIf="user.authStatus!='AUTH'" routerLinkActive="active"><a routerLink="/signup">Sign Up</a></li>
           <li *ngIf="user.authStatus=='AUTH'" routerLinkActive="active"><a routerLink="/sellticket">Sell Tickets</a></li>
