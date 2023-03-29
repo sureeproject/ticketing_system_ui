@@ -10,7 +10,7 @@
       </div>
       <nav class="hright dnav">
         <ul>     
-          <li *ngIf="user.authStatus=='AUTH'" routerLinkActive="active" style="color:#57b846; text-transform: uppercase;" > Hi ! {{user.firstName}}</li>
+          <li *ngIf="user.authStatus=='AUTH'" routerLinkActive="active" [ngStyle]="{ 'color': '#57b846','text-decoration':'underline','text-transform': 'uppercase'}" > Hi ! {{user.firstName}}</li>
           <li *ngIf="user.authStatus!='AUTH'" routerLinkActive="active"><a routerLink="/login">Sign In</a></li>
           <li *ngIf="user.authStatus!='AUTH'" routerLinkActive="active"><a routerLink="/signup">Sign Up</a></li>
           <li *ngIf="user.authStatus=='AUTH'" routerLinkActive="active"><a routerLink="/sellticket">Sell Tickets</a></li>
